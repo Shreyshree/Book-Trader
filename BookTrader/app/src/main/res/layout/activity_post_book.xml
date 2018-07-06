@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.xeng.booktrader.activity.PostBookActivity"
+    android:focusableInTouchMode="true">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="30dp"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin">
+
+            <TextView
+                android:id="@+id/tvPostBookHello"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Please enter book details"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:gravity="center" />
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_booktrader"
+                >
+
+                <EditText
+                    android:id="@+id/etISBN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="ISBN"
+                    android:inputType="number"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edittext_booktrader"
+                >
+
+                <EditText
+                    android:id="@+id/etEdition"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Edition (Optional)"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Book Condition:"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/spinnerCondition"
+                android:entries="@array/conditions"
+                android:prompt="@string/condition_prompt"
+                android:background="@drawable/edittext_booktrader"
+                >
+            </Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Province:"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/spinnerProvince"
+                android:entries="@array/provinces"
+                android:background="@drawable/edittext_booktrader"
+                >
+            </Spinner>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="City:"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="5dp"/>
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:id="@+id/spinnerCity"
+                android:entries="@array/cities"
+                android:background="@drawable/edittext_booktrader"
+                >
+            </Spinner>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edittext_booktrader"
+                android:layout_marginTop="10dp"
+                >
+
+                <EditText
+                    android:id="@+id/etPrice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Price"
+                    android:inputType="numberDecimal"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/edittext_booktrader"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/etNotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Notes (Optional)"
+                    android:background="@android:color/transparent"
+                    android:padding="5dp"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PICTURES"
+                android:textStyle="bold"
+                android:textColor="@color/lightGrey"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="120">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:src="@drawable/ic_menu_camera"
+                        android:background="@drawable/edittext_booktrader"
+                        android:onClick="addPicture"
+                        android:id="@+id/img00"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:src="@drawable/ic_menu_camera"
+                        android:background="@drawable/edittext_booktrader"
+                        android:onClick="addPicture"
+                        android:id="@+id/img01"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:src="@drawable/ic_menu_camera"
+                        android:background="@drawable/edittext_booktrader"
+                        android:id="@+id/img02"
+                        android:onClick="addPicture"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="120">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:src="@drawable/ic_menu_camera"
+                        android:background="@drawable/edittext_booktrader"
+                        android:id="@+id/img10"
+                        android:onClick="addPicture"/>
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:src="@drawable/ic_menu_camera"
+                        android:background="@drawable/edittext_booktrader"
+                        android:id="@+id/img11"
+                        android:onClick="addPicture"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="130dp"
+                        android:src="@drawable/ic_menu_camera"
+                        android:background="@drawable/edittext_booktrader"
+                        android:id="@+id/img12"
+                        android:onClick="addPicture"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:onClick="attemptPostBook"
+                android:text="Submit Post"
+                android:textColor="#ffffffff"
+                android:textAllCaps="false"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/button_booktrader"/>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

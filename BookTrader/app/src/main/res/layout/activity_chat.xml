@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.xeng.booktrader.activity.ChatActivity">
+
+    <LinearLayout
+        android:id="@+id/chatControls"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/edittext_booktrader"
+        android:focusable="true"
+        android:focusableInTouchMode="true" >
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:inputType="textMultiLine"
+            android:hint="@string/typeMessage"
+            android:layout_weight="0.8"
+            android:background="@android:color/transparent"/>
+
+        <ImageButton
+            android:id="@+id/btnSend"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_menu_send"
+            android:background="@android:color/transparent"
+            android:layout_weight="0.2"
+            android:onClick="sendMessage"/>
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lvMessages"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="false"
+        android:layout_above="@+id/chatControls"
+        android:padding="5dp"
+        android:listSelector="@android:color/transparent"
+        android:transcriptMode="alwaysScroll"
+        android:divider="@null"
+        />
+
+</RelativeLayout>
